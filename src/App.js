@@ -8,12 +8,11 @@ export function App() {
   const [films, setFilms] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [nombre, setNombre] = useState('');
-  const [tempInfo, setTempInfo] = useState([]);
 
   const getElemet = async (category) => {
     const url = `https://movie-database-imdb-alternative.p.rapidapi.com/?s=${encodeURI(
       category
-    )}&r=json&page=1&rapidapi-key=147c309811msh9fa458b147d91b0p1684adjsn3dfcc182ea79`;
+    )}&r=json&rapidapi-key=147c309811msh9fa458b147d91b0p1684adjsn3dfcc182ea79`;
     const resp = await fetch(url);
     const { Search } = await resp.json();
 
@@ -35,7 +34,6 @@ export function App() {
     //console.log(tempData1.concat(tempData2));
     setFilms( tempData1.concat(tempData2) );
     setFiltered( tempData1.concat(tempData2) );
-    setTempInfo( tempData1.concat(tempData2)  );
   };
 
   useEffect(() => {
@@ -53,7 +51,6 @@ export function App() {
               films={ films } 
               setFiltered={ setFiltered }
               filtered={ filtered }
-              tempInfo={ tempInfo }
               />
           }
         </div>

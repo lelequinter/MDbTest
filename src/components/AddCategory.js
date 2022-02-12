@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-export const AddCategory = ({ setNombre, films, setFiltered, filtered, tempInfo }) => {
+export const AddCategory = ({ setNombre, films, setFiltered, filtered}) => {
   const [inputValue, setInputValue] = useState("");
 
   const handleInputChange = (e) => {
@@ -57,12 +57,36 @@ export const AddCategory = ({ setNombre, films, setFiltered, filtered, tempInfo 
         setFiltered( [...oDes] );
     }
 
+    const peliculas = () => {
+        const filPelis = films.filter( pelis => 
+            pelis.type.includes( 'movie' ) 
+        );
+        setFiltered( filPelis );
+    }
+
+    const series = () => {
+        const filSeries = films.filter( series => 
+            series.type.includes( 'series' ) 
+        );
+        setFiltered( filSeries );
+    }
+
+    const games = () => {
+        const filGames = films.filter( games => 
+            games.type.includes( 'game' ) 
+        );
+        setFiltered( filGames );
+    }
+
   return (
     <form onSubmit={handleSubmit}>
       <input type="text" value={inputValue} onChange={handleInputChange} />
       <div className="btn-group animate__animated animate__fadeIn animate__delay-0.5s mt-2" role="group" aria-label="Basic example">
             <button onClick={ ordenAsc } type="button" className="btn btn-secondary"> Orden ↗ </button>
             <button onClick={ ordenDes } type="button" className="btn btn-secondary"> Orden ↘ </button>
+            <button onClick={ peliculas } type="button" className="btn btn-success"> Movies </button>
+            <button onClick={ series } type="button" className="btn btn-primary"> Series </button>
+            <button onClick={ games } type="button" className="btn btn-danger"> Games </button>
         </div>
     </form>
   );
