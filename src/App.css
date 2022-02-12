@@ -33,6 +33,10 @@ input{
   max-height: 100px;
 }
 
+a{
+  text-decoration: none;
+}
+
 .card:hover{
   transform: scale(1.03);
 }

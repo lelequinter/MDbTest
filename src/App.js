@@ -42,7 +42,7 @@ export function App() {
 
   return (
     <>
-      <h1 className="text-white animate__animated animate__fadeIn">MDbTest App</h1>
+      <a className="text-white animate__animated animate__fadeIn"  href="javascript:location.reload()"><h1>MDbTest App</h1></a>
       <div className="container">
         <div className="col-md-auto">
           {
