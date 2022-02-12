@@ -1,24 +1,33 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { AddCategory } from './components/AddCategory';
+import { ElementGrid } from './components/ElementGrid';
 import './App.css';
 
-function App() {
+
+export function App() {
+
+const [ categories, setCategories] = useState(['avengers']);
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+        <h1 className="text-white">MDbTest App</h1>
+        <AddCategory setCategories= { setCategories }/>
+        <hr/>
+
+        <ol>
+          {
+            categories.map( category => ( 
+            <ElementGrid 
+              key={ category }
+              category={ category }
+              /> 
+            ))
+          }
+        </ol>
+
+    </>
   );
 }
 
