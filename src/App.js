@@ -8,8 +8,6 @@ export function App() {
 
 const [ categories, setCategories] = useState(['avengers']);
 
-
-
   return (
     <>
         <h1 className="text-white">MDbTest App</h1>

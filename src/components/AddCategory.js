@@ -13,7 +13,8 @@ export const AddCategory = ( {setCategories} ) => {
         e.preventDefault();
         // console.log('submit hecho')
         if( inputValue.trim().length>2){
-            setCategories( cats => [ inputValue, ...cats] );
+            // setCategories( cats => [ inputValue, ...cats] );
+            setCategories( cats => [ inputValue, ...cats ] );
             setInputValue('');
         }        
     }
@@ -24,7 +25,6 @@ export const AddCategory = ( {setCategories} ) => {
             type="text"
             value={ inputValue }
             onChange={ handleInputChange }
-
         />
     </form>
   )
