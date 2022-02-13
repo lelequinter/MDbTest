@@ -31,7 +31,6 @@ export function App() {
   const getData = async () => {
     let tempData1 = await getElemet("avengers");
     let tempData2 = await getElemet("matrix");
-    //console.log(tempData1.concat(tempData2));
     setFilms( tempData1.concat(tempData2) );
     setFiltered( tempData1.concat(tempData2) );
   };
@@ -42,7 +41,7 @@ export function App() {
 
   return (
     <>
-      <a className="text-white animate__animated animate__fadeIn"  href="javascript:location.reload()"><h1>MDbTest App</h1></a>
+      <h1 className="text-white animate__animated animate__fadeIn">MDbTest App</h1>
       <div className="container">
         <div className="col-md-auto">
           {
